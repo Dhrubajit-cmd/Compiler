@@ -1,0 +1,23 @@
+Lexical Analysis or scanning is the process where the stream of characters making up the program is read from 
+left-to-right and grouped into tokens. Tokens are sequence of characters with a collective meaning. There are 
+usually only a small number of tokens for a progamming language : constants(integer,double,char,string,etc.), 
+operators(arithmetic, logical and relational), punctuation and reserved words. 
+
+The lexical analyzer takes the source progam as the input and produces stream of tokens as the output. It might
+recognize particular instances of tokens such as: 
+3 or 255 for an integer constant token
+"Fred" or "Wilma" for a string constant token
+numTickets or queue for a variable token
+
+Such specific instances are called lexemes. A lexeme is the actual character sequence forming a token, the token 
+is the general class that a lexeme belong to. Some tokens have exactly one lexeme (e.g., the > character); for others, 
+there are many lexemes (e.g.integer constants).
+
+The scanner is tasked with determining that the input stream can be divided into valid symbols in the source language, 
+but has no smarts about which token should come where. Few errors can be detected at the lexical level alone 
+because the scanner has a very localized view of the source program without any context. The scanner can report
+about characters that are not valid tokens (e.g., an illegal or unrecognized symbol) and a
+few other malformed entities (illegal characters within a string constant, unterminated
+comments, etc.) It does not look for or detect garbled sequences, tokens out of place,
+undeclared identifiers, misspelled keywords, mismatched types and the like. For
+example, the following input will not generate any errors in the lexical analysis phase,

@@ -21,3 +21,9 @@ few other malformed entities (illegal characters within a string constant, unter
 comments, etc.) It does not look for or detect garbled sequences, tokens out of place,
 undeclared identifiers, misspelled keywords, mismatched types and the like. For
 example, the following input will not generate any errors in the lexical analysis phase,
+
+
+The scanner has no idea how the tokens are/can be grouped. 
+
+It can be a convenient place to carry out some other chores, like stripping out comments and white spaces between tokens
+and perhaps even some features like macros and conditional compilation
